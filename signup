@@ -1,0 +1,78 @@
+struct ContentView: View {
+    @State var firstName = ""
+    @State var lastName = ""
+    @State var email = ""
+    @State var password = ""
+    @State var passwordAgain = ""
+
+    var body: some View {
+        VStack{
+            Spacer()
+            Text("Sign Up")
+                .fontWeight(.heavy)
+                .foregroundColor(Color("signupforeground"))
+                .font(.system(size: 64))
+            HStack {
+                Image(systemName: "heart")
+                    .foregroundColor(.gray)
+                TextField("First Name", text: $firstName)
+            } .frame(height: 60)
+            .background(Color.white)
+            .cornerRadius(8)
+            .padding(.horizontal, 20)
+            HStack {
+                Image(systemName: "heart")
+                    .foregroundColor(.gray)
+                TextField("Last Name", text: $lastName)
+                
+            } .frame(height: 60)
+            .background(Color.white)
+            .cornerRadius(8)
+            .padding(.horizontal, 20)
+            HStack {
+                Image(systemName: "envelope")
+                    .foregroundColor(.gray)
+                TextField("Email", text: $email)
+            } .frame(height: 60)
+            .background(Color.white)
+            .cornerRadius(8)
+            .padding(.horizontal, 20)
+            HStack {
+                Image(systemName: "lock")
+                    .foregroundColor(.gray)
+                SecureField("Password", text: $password)
+            } .frame(height: 60)
+            .background(Color.white)
+            .cornerRadius(8)
+            .padding(.horizontal, 20)
+            HStack {
+                Image(systemName: "lock")
+                    .foregroundColor(.gray)
+                SecureField("Confirm Password", text: $passwordAgain)
+            } .frame(height: 60)
+            .background(Color.white)
+            .cornerRadius(8)
+            .padding(.horizontal, 20)
+            
+            Button( action: {
+                
+            }, label: {
+                Text("Continue")
+                    .foregroundColor(/*@START_MENU_TOKEN@*/Color.white/*@END_MENU_TOKEN@*/)
+                    .frame(width: 250,
+                           height: 50,
+                           alignment: .center)
+                    .background(Color(.brown))
+            })
+            Spacer()
+        }.background(
+            Image("bubble wrap")
+        )
+    }
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}
